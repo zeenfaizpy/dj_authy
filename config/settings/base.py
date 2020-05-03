@@ -75,6 +75,7 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
+    "dj_authy.core.apps.CoreConfig",
     "dj_authy.users.apps.UsersConfig",
     # Your stuff: custom apps go here
 ]
@@ -258,7 +259,7 @@ LOGGING = {
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework.authentication.SessionAuthentication",
-        "rest_framework.authentication.TokenAuthentication",
+        "dj_authy.core.authentication.TokenAuthentication",
     ),
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
 }

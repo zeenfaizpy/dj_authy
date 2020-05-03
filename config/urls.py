@@ -20,6 +20,7 @@ urlpatterns = [
 # API URLS
 urlpatterns += [
     path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.authtoken')),
     # API base url
     path("api/", include("config.api_router")),
     # DRF auth token
