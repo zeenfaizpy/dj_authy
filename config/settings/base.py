@@ -70,6 +70,8 @@ THIRD_PARTY_APPS = [
     "crispy_forms",
     "rest_framework",
     "rest_framework.authtoken",
+
+    "djoser",
 ]
 
 LOCAL_APPS = [
@@ -250,18 +252,6 @@ LOGGING = {
     "root": {"level": "INFO", "handlers": ["console"]},
 }
 
-
-# django-allauth
-# ------------------------------------------------------------------------------
-# https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_ALLOW_REGISTRATION = env.bool("DJANGO_ACCOUNT_ALLOW_REGISTRATION", True)
-ACCOUNT_USER_MODEL_USERNAME_FIELD = None
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_AUTHENTICATION_METHOD = "email"
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
-ACCOUNT_ADAPTER = "dj_authy.users.adapters.AccountAdapter"
-
 # django-rest-framework
 # -------------------------------------------------------------------------------
 # django-rest-framework - https://www.django-rest-framework.org/api-guide/settings/
@@ -273,8 +263,10 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
 }
 
-# REST_AUTH
+# DJOSER
 # ------------------------------------------------------------------------------
-REST_AUTH_REGISTER_SERIALIZERS = {
-    'REGISTER_SERIALIZER': 'dj_authy.users.registration.serializers.RegisterSerializer',
+DJOSER = {
+    'SEND_ACTIVATION_EMAIL': True,
+    'ACTIVATION_URL': 'users/activation/{uid}/{token}',
+    'PASSWORD_RESET_CONFIRM_URL': '',
 }

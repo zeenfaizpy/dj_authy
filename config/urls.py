@@ -19,6 +19,7 @@ urlpatterns = [
 
 # API URLS
 urlpatterns += [
+    path('auth/', include('djoser.urls')),
     # API base url
     path("api/", include("config.api_router")),
     # DRF auth token
