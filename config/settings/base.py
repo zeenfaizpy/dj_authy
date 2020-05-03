@@ -270,4 +270,7 @@ DJOSER = {
     'SEND_ACTIVATION_EMAIL': True,
     'ACTIVATION_URL': 'users/activation/{uid}/{token}',
     'PASSWORD_RESET_CONFIRM_URL': '',
+    'SERIALIZERS': {
+        'user': 'dj_authy.users.api.serializers.AuthyUserSerializer'
+    }
 }
