@@ -3,4 +3,4 @@ DJ Starter
 
 Django Starter Project
 
-This project is powered by Built with Cookiecutter Django.
+This project is bootstrapped with Cookiecutter Django.
